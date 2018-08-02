@@ -18,7 +18,9 @@ SmartHouse.prototype.setOwner = function (owner) {
 }
 
 var smhouse = new SmartHouse('kate')
-
-//smhouse.addDevices(coffeeMachine);
-//smhouse.addDevices(fridge)
-//smhouse.addDevices(microwave)
+var coffeeMachine = new CoffeeMachine(100000, 400);
+smhouse.addDevices(coffeeMachine);
+var fridge = new Fridge(500, -2);
+smhouse.addDevices(fridge)
+var microwave = new Microwave(300, 1000);
+smhouse.addDevices(microwave)
