@@ -9,7 +9,9 @@ inputf1.value = 'Включить холодильник';
 inputf1.type = 'button';
 
 inputf1.addEventListener('click', function () {
-    fridge.enable();
+    if(this._type=='fridge'){
+        
+   newDevice.enable();}
     inputf1.style.display = 'none';
     var imgf = document.createElement('img')
     imgf.src = 'http://www.e-commerce.pl/zdjecia/Lodowki-wolnostojace/GR-B469BTQA-66363-big.jpg';
@@ -40,14 +42,16 @@ inputf1.addEventListener('click', function () {
     var addf = document.forms.f.elements.btnf;
     var fridge1 = document.getElementById('fridge1');
     addf.addEventListener('click', function () {
-        fridge.addFood(inpf.value);
+        if(this._type=='fridge'){
+        
+            newDevice.addFood(inpf.value);}
         var li = document.createElement('li');
         li.id = 'list'
         li.innerText = inpf.value;
         fridge1.appendChild(li);
-
+    
     })
-
+    
     var formf2 = document.createElement('form');
     formf2.name = "f2";
     fridgediv.appendChild(formf2)
@@ -70,7 +74,9 @@ inputf1.addEventListener('click', function () {
 
         var y = Number(inp2.value);
 
-        fridge.setTemperature(y)
+        if(this._type=='fridge'){
+        
+            newDevice.setTemperature(y)}
         var textinf = 'Текущая температура холодильника:' + y
         var divinf = document.createElement('div');
         var pinf = document.createElement('p')
@@ -78,7 +84,7 @@ inputf1.addEventListener('click', function () {
         fridgediv.appendChild(divinf)
         divinf.appendChild(pinf);
     })
-
+    
 })
 fridgediv.appendChild(inputf1)
 
@@ -92,7 +98,9 @@ inputm1.name = 'inputm1';
 inputm1.value = 'Включить микроволновку';
 inputm1.type = 'button';
 inputm1.addEventListener('click', function () {
-    microwave.enable()
+    if(this._type=='microvawe'){
+        
+        newDevice.enable()}
     inputm1.style.display = 'none';
     var imgm = document.createElement('img')
     imgm.src = 'http://delayvkusno.ru/wp-content/uploads/2012/12/9cf16ad9f0bd1943a2733eb4b2f1afcb.jpg';
@@ -105,7 +113,9 @@ inputm1.addEventListener('click', function () {
     inputoff.value = 'Выключить микроволновку';
     inputoff.type = 'button';
     inputoff.addEventListener('click', function () {
-        microwave.disable()
+        if(this._type=='microvawe'){
+        
+            newDevice.disable()}
     })
     var formm = document.createElement('form');
     formm.name = "fm";
@@ -130,8 +140,12 @@ inputm1.addEventListener('click', function () {
 
         var z = Number(inpm.value);
 
-        microwave._setTimeToCook(z);
-        microwave.run();
+        if(this._type=='microvawe'){
+        
+                newDevice._setTimeToCook(z);}
+                if(this._type=='microvawe'){
+        
+                    newDevice.run();}
 
 
     })
@@ -152,7 +166,9 @@ name = 'myid1'
 newInput1.value = 'Включить кофеварку';
 newInput1.type = 'button';
 newInput1.addEventListener('click', function () {
-    coffeeMachine.enable();
+    if(this._type=='coffeemachine'){
+        
+        newDevice.enable();}
     newInput1.style.display = 'none'
     var img1 = document.createElement('img')
 
@@ -177,10 +193,14 @@ newInput1.addEventListener('click', function () {
     var inp = document.forms.f1.elements.name;
     var add = document.forms.f1.elements.btn;
     add.addEventListener('click', function () {
-        coffeeMachine.setWaterAmount(0);
+        if(this._type=='coffeemachine'){
+        
+            newDevice.setWaterAmount(0);}
         var x = Number(inp.value);
         console.log(x)
-        coffeeMachine.addWater(x)
+        if(this._type=='coffeemachine'){
+        
+            newDevice.addWater(x)}
     })
 
     var newInput4 = document.createElement('input');
@@ -188,7 +208,9 @@ newInput1.addEventListener('click', function () {
     newInput4.value = 'сварить кофу';
     newInput4.type = 'button';
     newInput4.addEventListener('click', function () {
-        coffeeMachine.run();
+        if(this._type=='coffeemachine'){
+        
+            newDevice.run();}
     });
     mainDiv.appendChild(newInput4)
 });
