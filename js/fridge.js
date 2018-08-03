@@ -1,6 +1,7 @@
 function Fridge(power, temperature) {
     Device.apply(this, arguments)
     this._food = [];
+    this._type='fridge'
     this._temperature = temperature;
 }
 Fridge.prototype = Object.create(Device.prototype)
@@ -26,7 +27,7 @@ Fridge.prototype.setTemperature = function (temperature) {
         var textdiv1 = document.createElement('div');
         var p1 = document.createElement('p')
         p1.innerText = text1;
-        fridgediv.appendChild(textdiv1)
+        document.body.appendChild(textdiv1)
         textdiv1.appendChild(p1);
 
         this._enabled = false;
@@ -41,9 +42,9 @@ Fridge.prototype.getTemperature = function () {
     return this._temperature;
 }
 
-var fridge = new Fridge(500, -2);
+//var fridge = new Fridge(500, -2);
 
-fridge.setPower(1000);
+//fridge.setPower(1000);
 
 //fridge.enable();
 //console.log(fridge.getTemperature());

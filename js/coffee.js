@@ -2,6 +2,7 @@ function CoffeeMachine(power, capacity) {
     Device.apply(this, arguments);
     this._capacity = capacity;
     this._waterAmount = 0;
+    this._type='coffeemachine'
     this._timerId;
 }
 CoffeeMachine.prototype = Object.create(Device.prototype)
@@ -54,9 +55,9 @@ CoffeeMachine.prototype.addWater = function (amount) {
 
 
 
-var coffeeMachine = new CoffeeMachine(100000, 400);
+//var coffeeMachine = new CoffeeMachine(100000, 400);
 //coffeeMachine.enable();
-coffeeMachine.setPower(200000)
+//coffeeMachine.setPower(200000)
 //coffeeMachine.setWaterAmount(100);
 //coffeeMachine.addWater(200);
 //coffeeMachine.addWater(100);

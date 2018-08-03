@@ -1,6 +1,7 @@
 function Microwave(power, time) {
     Device.apply(this, arguments);
     this._time = time
+    this._type='microwave'
 }
 Microwave.prototype = Object.create(Device.prototype)
 Microwave.prototype.constructor = Microwave;
@@ -9,7 +10,7 @@ Microwave.prototype._onReady = function () {
     var textdiv = document.createElement('div');
     var p = document.createElement('p')
     p.innerText = text;
-    microwavediv.appendChild(textdiv)
+    document.body.appendChild(textdiv)
     textdiv.appendChild(p);
 }
 Microwave.prototype._setTimeToCook = function (time) {
@@ -29,7 +30,7 @@ Microwave.prototype.disable = function () {
     clearTimeout(this._timerId);
     alert('Микроволновка остановлена')
 }
-var microwave = new Microwave(300, 1000);
+//var microwave = new Microwave(300, 1000);
 //microwave.enable();
 //microwave.run();
 //microwave.disable();

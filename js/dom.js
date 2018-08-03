@@ -1,3 +1,33 @@
+var shdiv=document.createElement('div');
+document.body.appendChild(shdiv)
+var shform = document.createElement('form');
+    shform.name = "shf";
+   shdiv.appendChild(shform);
+
+    var inputSH = document.createElement('input');
+    inputSH.value = 'Добавить холодильник'
+    inputSH.type = 'button';
+    inputSH.name = 'SHfridge'
+    shform.appendChild(inputSH)
+
+    var inputSh2 = document.createElement('input');
+    inputSh2.name = 'SHCoffee'
+    inputSh2.type = 'button';
+    inputSh2.value = 'Добавить кофеварку';
+    shform.appendChild(inputSh2)
+
+    var inputSh3 = document.createElement('input');
+    inputSh3.name = 'SHmicrowave'
+    inputSh3.type = 'button';
+    inputSh3.value = 'Добавть микроволновку';
+    shform.appendChild(inputSh3);
+
+    inputSH.addEventListener('click', function () {
+       
+
+
+ var fridge = new Fridge(500, -2)
+ sm.addDevices(fridge)
 var fridgediv = document.createElement('div');
 fridgediv.id = 'myfdiv';
 document.body.appendChild(fridgediv);
@@ -7,9 +37,10 @@ inputf1.id = ' input1';
 inputf1.name = ' input1';
 inputf1.value = 'Включить холодильник';
 inputf1.type = 'button';
-
+    
 inputf1.addEventListener('click', function () {
-    fridge.enable();
+    
+   fridge.enable();
     inputf1.style.display = 'none';
     var imgf = document.createElement('img')
     imgf.src = 'http://www.e-commerce.pl/zdjecia/Lodowki-wolnostojace/GR-B469BTQA-66363-big.jpg';
@@ -48,6 +79,8 @@ inputf1.addEventListener('click', function () {
 
     })
 
+
+
     var formf2 = document.createElement('form');
     formf2.name = "f2";
     fridgediv.appendChild(formf2)
@@ -81,7 +114,10 @@ inputf1.addEventListener('click', function () {
 
 })
 fridgediv.appendChild(inputf1)
-
+})
+inputSh3.addEventListener('click', function () {
+    var microwave = new Microwave(300, 1000);
+sm.addDevices(microwave)
 var microwavediv = document.createElement('div');
 microwavediv.id = 'myMdiv';
 document.body.appendChild(microwavediv);
@@ -138,9 +174,11 @@ inputm1.addEventListener('click', function () {
 
 })
 microwavediv.appendChild(inputm1)
+})
 
-
-
+inputSh2.addEventListener('click', function () {
+    var coffeeMachine = new CoffeeMachine(100000, 400);
+sm.addDevices(coffeeMachine)
 var div = document.createElement('div');
 div.id = 'mydiv';
 document.body.appendChild(div);
@@ -192,4 +230,4 @@ newInput1.addEventListener('click', function () {
     });
     mainDiv.appendChild(newInput4)
 });
-mainDiv.appendChild(newInput1)
+mainDiv.appendChild(newInput1)})
