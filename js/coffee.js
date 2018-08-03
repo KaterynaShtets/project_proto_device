@@ -2,7 +2,7 @@ function CoffeeMachine(power, capacity) {
     Device.apply(this, arguments);
     this._capacity = capacity;
     this._waterAmount = 0;
-    this._type='coffeemachine'
+    this._type = 'coffeemachine'
     this._timerId;
 }
 CoffeeMachine.prototype = Object.create(Device.prototype)
@@ -21,7 +21,7 @@ CoffeeMachine.prototype.setWaterAmount = function (amount) {
         throw new Error("Значение должно быть положительным");
     }
     if (amount > this._capacity) {
-        throw new Error("Нельзя залить больше, чем " + capacity);
+        throw new Error("Нельзя залить больше, чем " + this._capacity);
     }
     this._waterAmountValid(amount)
 }
@@ -31,36 +31,22 @@ CoffeeMachine.prototype.getTimeToBoil = function () {
 CoffeeMachine.prototype.disable = function () {
     Device.prototype.disable()
     clearTimeout(this.timerId)
-    let text5 ='Кофеварка остановлена'
-    let textdiv5 = document.createElement('div');
-     let p5 = document.createElement('p')
-     p5.innerText = text5;
-     document.body.appendChild(textdiv4)
-     textdiv5.appendChild(p5);
+    var text5 = 'Кофеварка остановлена'
+    return text5
 }
-CoffeeMachine.prototype._onReady = function () {
-    let text4 ='Готов кофе: ' + this._waterAmount + 'мл'
-       let textdiv4 = document.createElement('div');
-        let p4 = document.createElement('p')
-        p4.innerText = text4;
-        document.body.appendChild(textdiv4)
-        textdiv4.appendChild(p4);
-   
-    // Готов кофе: 150 мл
-}
+
+
 CoffeeMachine.prototype.run = function () {
     if (!this._enabled) {
         throw new Error("Кофеварка выключена")
     }
-    self = this;
-    this._timerId = setTimeout(function () {
-        CoffeeMachine.prototype._onReady.call(self)
-    }, this.getTimeToBoil())
+    var textcof = 'Готов кофе: ' + this._waterAmount + 'мл'
+    return textcof
 }
 
 CoffeeMachine.prototype.addWater = function (amount) {
     this.setWaterAmount(this._waterAmount + amount);
-    console.log(this._waterAmount + amount)
+
 };
 
 
