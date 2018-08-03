@@ -10,7 +10,7 @@ Microwave.prototype._onReady = function () {
     var textdiv = document.createElement('div');
     var p = document.createElement('p')
     p.innerText = text;
-    microwavediv.appendChild(textdiv)
+    document.body.appendChild(textdiv)
     textdiv.appendChild(p);
 }
 Microwave.prototype._setTimeToCook = function (time) {
