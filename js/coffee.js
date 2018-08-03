@@ -31,11 +31,21 @@ CoffeeMachine.prototype.getTimeToBoil = function () {
 CoffeeMachine.prototype.disable = function () {
     Device.prototype.disable()
     clearTimeout(this.timerId)
-    alert('Кофеварка остановлена')
+    let text5 ='Кофеварка остановлена'
+    let textdiv5 = document.createElement('div');
+     let p5 = document.createElement('p')
+     p5.innerText = text5;
+     document.body.appendChild(textdiv4)
+     textdiv5.appendChild(p5);
 }
 CoffeeMachine.prototype._onReady = function () {
-    alert('Готов кофе: ' + this._waterAmount + 'мл');
-    console.log(this._waterAmount)
+    let text4 ='Готов кофе: ' + this._waterAmount + 'мл'
+       let textdiv4 = document.createElement('div');
+        let p4 = document.createElement('p')
+        p4.innerText = text4;
+        document.body.appendChild(textdiv4)
+        textdiv4.appendChild(p4);
+   
     // Готов кофе: 150 мл
 }
 CoffeeMachine.prototype.run = function () {

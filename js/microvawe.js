@@ -28,7 +28,12 @@ Microwave.prototype.run = function () {
 Microwave.prototype.disable = function () {
     Device.prototype.disable.apply(this);
     clearTimeout(this._timerId);
-    alert('Микроволновка остановлена')
+    var text3 = 'Микроволновка остановлена'
+    var textdiv3 = document.createElement('div');
+    var p3 = document.createElement('p')
+    p2.innerText = text3;
+    document.body.appendChild(textdiv3)
+    textdiv3.appendChild(p3);
 }
 //var microwave = new Microwave(300, 1000);
 //microwave.enable();

@@ -7,15 +7,11 @@ SmartHouse.prototype.setOwner = function (owner) {
         this._owner = owner
     }
 }
-    SmartHouse.prototype.getOwner = function () {
-        return this._owner
+SmartHouse.prototype.getOwner = function () {
+    return this._owner
+}
+SmartHouse.prototype.addDevices = function () {
+    for (var i = 0; i < arguments.length; i++) {
+        this._devices.push(arguments[i])
     }
-
-    
-        var sm=new SmartHouse('Kate')
-    SmartHouse.prototype.addDevices = function () {
-        for (var i = 0; i < arguments.length; i++) {
-            this._devices.push(arguments[i])
-        }
-    }
-    
+}

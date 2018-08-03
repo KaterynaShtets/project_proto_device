@@ -1,3 +1,5 @@
+
+var sm=new SmartHouse('Kate')
 var shdiv=document.createElement('div');
 document.body.appendChild(shdiv)
 var shform = document.createElement('form');
