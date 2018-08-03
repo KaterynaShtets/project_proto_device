@@ -27,7 +27,7 @@ Fridge.prototype.setTemperature = function (temperature) {
         var textdiv1 = document.createElement('div');
         var p1 = document.createElement('p')
         p1.innerText = text1;
-        fridgediv.appendChild(textdiv1)
+        document.body.appendChild(textdiv1)
         textdiv1.appendChild(p1);
 
         this._enabled = false;
